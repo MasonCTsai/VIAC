@@ -1,0 +1,38 @@
+body {
+    background-color: #a2d2ff;
+    font-family: sans-serif;
+}
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* border: 1px solid black; */
+}
+
+#helloText {
+    color: #d3ebff;
+    font-weight: 800;
+    margin-bottom: -5px;
+}
+
+.unitText {
+    color: #d3ebff;
+    font-weight: 800;
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#description {
+    text-shadow: 2px 3px #a2e8ff, 4px 6px #84e0ff;
+}
+
+::selection {
+    color: #ffc8dd;
+    background-color: #ffafcc;
+}
