@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/unitIntro.css">
     <title>Unit 2</title>
+    {% if session['role'] == 'student' %}
+    <script>
+        setInterval(() => {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/getunit", false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+                console.log(result);
+                if (result !='2.0') {
+                    window.location.href = result;
+                }
+            }
+        }, 2000)
+    </script>
+    {% endif %}
 </head>
 <body>
     <div class="center">

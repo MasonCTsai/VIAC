@@ -1,5 +1,5 @@
 body {
-    background-color: #a2d2ff;
+    background-color: #5D576B;
     font-family: sans-serif;
 }
 
@@ -15,13 +15,13 @@ body {
 }
 
 #helloText {
-    color: #d3ebff;
+    color: #99E1D9;
     font-weight: 800;
-    margin-bottom: -5px;
+    margin-bottom: 0px;
 }
 
 .unitText {
-    color: #d3ebff;
+    color: #99E1D9;
     font-weight: 800;
     font-size: 50px;
     margin-top: 0px;
@@ -29,10 +29,12 @@ body {
 }
 
 #description {
-    text-shadow: 2px 3px #a2e8ff, 4px 6px #84e0ff;
+    font-weight: 900;
+    font-size: 60px;
+    text-shadow: 2px 3px #6db1a9, 4px 6px #439289, 3px 4.5px 10px #FFFAE3;
 }
 
 ::selection {
-    color: #ffc8dd;
-    background-color: #ffafcc;
+    color: #FCFCFC;
+    background-color: #F7567C;
 }

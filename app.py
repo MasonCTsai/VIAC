@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, Response
 import json
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "192b9bdd22ab9ed4d12e236c78afcb9a393ec15f71bbf5dc987d54727823bcbf"
+with app.open_resource("secret/secretkey.txt",'r') as f:
+    app.config['SECRET_KEY'] = f.read()
 
 with app.open_resource("codes.json", 'r') as f:
     codes = json.load(f)
@@ -27,11 +28,16 @@ def homePage():
                 return render_template(str(currentUnit) + ".html", value=getValue())
     return render_template("home.html")
 
-@app.route("/<float:v>")
+@app.route("/<float:v>", methods = ["GET"])
 def unit1Page(v):
     global currentUnit
-    currentUnit = v
+    if session['role'] == "teacher":
+        currentUnit = v
     return render_template(str(currentUnit) + ".html", value=getValue())
+
+@app.route("/getunit")
+def getUnit():
+    return Response(str(currentUnit), mimetype="text/plain")
 
 @app.errorhandler(404)
 def nullPage(error):
