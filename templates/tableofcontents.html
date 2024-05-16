@@ -3,46 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ready</title>
-    <style>
-        ol {
-        list-style-type: none;
-        counter-reset: item;
-        margin: 0;
-        padding: 0;
-        }
-        ol > li {
-        display: table;
-        counter-increment: item;
-        margin-bottom: 0.6em;
-        }
-        ol > li:before {
-        content: counters(item, ".") ". ";
-        display: table-cell;
-        padding-right: 0.6em;    
-        }
-        li ol > li {
-        margin: 0;
-        }
-        li ol > li:before {
-        content: counters(item, ".") " ";
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="static/toc.css">
+    <title>Table of Contents</title>
 </head>
 <body>
-    <p>Welcome teacher!</p>
-        <ol>
-            <li><a href="/1.0">Unit 1 - Introduction</a>
+    <div id="gradientbackground"></div>
+    <div id="starbackground"></div>
+    <div id="mainbox">
+        <p id="welcome">Welcome teacher!</p>
+        <div class="unitbox">
+            <a href="/1.0" class="unittext">Unit 1 - Introduction to Types of Blindness</a>
+            <p class="subunittext">1.1 alkdfjhadslf</p>
+            <p class="subunittext">1.2 sdjjsdafh</p>
+        </div>
+        <div class="unitbox">
+            <a href="/2.0" class="unittext">Unit 2 - And Beyond</a>
+            <p class="subunittext">2.1 alkdfjhadslf</p>
+            <p class="subunittext">2.2 sdjjsdafh</p>
+        </div>
+    </div>
+        <!-- <p id="welcome">Welcome teacher!</p>
+        <ol id="unitlist">
+            <li class="unitcontainer"><a href="/1.0">Unit 1 - Introduction</a>
                 <ol>
-                    <li>dsaf</li>
-                    <li>sddooflj</li>
+                    <li class="subunit">dsaf</li>
+                    <li class="subunit">sddooflj</li>
                 </ol>
             </li>
-            <li><a href="/2.0">Unit 2 - And Beyond</a>
+            <li class="unitcontainer"><a href="/2.0">Unit 2 - And Beyond</a>
                 <ol>
-                    <li>lhasdf</li>
+                    <li class="subunit">lhasdf</li>
                 </ol>
             </li>
         </ol>
+    </div> -->
 </body>
 </html>

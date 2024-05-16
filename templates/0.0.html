@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/unitIntro.css">
-    <title>Unit 2</title>
+    <title>Uh oh!</title>
     {% if session['role'] == 'student' %}
     <script>
         setInterval(() => {
@@ -15,7 +15,7 @@
             if (xmlhttp.status==200) {
                 result = xmlhttp.responseText;
                 console.log(result);
-                if (result !='2.0') {
+                if (result !='0.0') {
                     window.location.href = result;
                 }
             }
@@ -28,8 +28,8 @@
     <div id="starbackground"></div>
     <div class="center">
         <p id="helloText">Hello,</p>
-        <p class="unitText">Welcome to Unit 2, </p>
-        <p class="unitText" id="description">And Beyond!</p>
+        <p class="unitText">Looks like you're a bit</p>
+        <p class="unitText" id="description">✨early✨</p>
     </div>
     <script> document.addEventListener('contextmenu', (e) => {e.preventDefault(); }) </script>
 </body>

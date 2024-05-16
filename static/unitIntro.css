@@ -1,9 +1,57 @@
 body {
-    background-color: #5D576B;
     font-family: sans-serif;
+    background: #5D576B;
+    margin: 0;
+    padding: 0;
+}
+
+#gradientbackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-45deg, #5D576B, #766e8d, #6f6585, #666270);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#starbackground {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url("stars.png");
+    background-size: 25%;
+    animation: pan 10s linear infinite;
+    filter: drop-shadow(0px 0px 3px #FFFAE3);
+}
+
+@keyframes pan {
+    0% {
+        transform: 0% 0%;
+    }
+
+    100% {
+        transform: 100% 0%;
+    }
 }
 
 .center {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #FFFAE3;
+    outline: 2px solid #fffae35e;
+    outline-offset: 5px;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -11,17 +59,20 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
+    padding: 10px;
     /* border: 1px solid black; */
 }
 
 #helloText {
     color: #99E1D9;
+    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
     font-weight: 800;
     margin-bottom: 0px;
 }
 
 .unitText {
     color: #99E1D9;
+    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
     font-weight: 800;
     font-size: 50px;
     margin-top: 0px;

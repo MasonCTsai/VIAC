@@ -11,8 +11,8 @@ with app.open_resource("codes.json", 'r') as f:
 currentUnit = 0.0
 
 def validateCode(code) -> bool:
-    if code in codes.keys():
-        session['role'] = codes[code]
+    if code.lower() in codes.keys():
+        session['role'] = codes[code.lower()]
         return True
     else:
         return False
@@ -41,7 +41,7 @@ def getUnit():
 
 @app.errorhandler(404)
 def nullPage(error):
-    return "<p>uh oh</p>"
+    return "<link rel='stylesheet' type='text/css' href='static/unitIntro.css'><body><div id='gradientbackground'></div><div id='starbackground'></div><div class='center'><p class='unitText' id='description'>uh oh</p></div></body>"
 
 def getValue():
     return {"currentUnit":currentUnit}

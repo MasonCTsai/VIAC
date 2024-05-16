@@ -7,10 +7,15 @@
     <title>VIAC</title>
 </head>
 <body>
-    <img src="static/thinkersletterhead.png" alt="The Thinkers logo">
-    <form method="post" id="roomCodeForm">
-        <input type="text" name="roomCode" id="roomCode" value="{{ request.form['roomCode'] }}" required autofocus>
-        <input type="submit" name="codeSubmitButton" id="codeSubmitButton">
-    </form>
+    <div id="gradientbackground"></div>
+    <div id="starbackground"></div>
+    <div id="interactionBox">
+        <img src="static/viaclogo.png" alt="V.I.A.C Logo" id="viaclogo">
+        <form method="post" id="roomCodeForm">
+            <input type="text" name="roomCode" id="roomCode" value="{{ request.form['roomCode'] }}" required autofocus autocomplete="off" maxlength="6" alt="Insert Room Code" placeholder="Room Code">
+            <input type="submit" name="codeSubmitButton" id="codeSubmitButton" value="Go!">
+        </form>
+    </div>
+    <img src="static/thinkersletterhead.png" alt="The Thinkers logo" id="thinkerslogo">
 </body>
 </html>
