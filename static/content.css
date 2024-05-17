@@ -3,11 +3,16 @@ body {
     background: #5D576B;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-y:scroll;
+    min-height: 100%;
+}
+
+html {
+    height: 100vh;
 }
 
 #gradientbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background: linear-gradient(-45deg, #5D576B, #766e8d, #6f6585, #666270);
@@ -28,48 +33,44 @@ body {
 }
 
 #starbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-image: url("stars.png");
     background-size: 25%;
-    animation: pan 10s linear infinite;
     filter: drop-shadow(0px 0px 3px #FFFAE3);
 }
 
-@keyframes pan {
-    0% {
-        transform: 0% 0%;
-    }
-
-    100% {
-        transform: 100% 0%;
-    }
+#content {
+    width: 1000px;
+    max-width: 75vw;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0%);
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
 }
 
-.center {
+.contentcontainer {
     border: 2px solid #000000;
     border-radius: 5px;
     background-color: #FFFAE3;
     outline: 2px solid #fffae35e;
     outline-offset: 5px;
     filter: drop-shadow(5px 5px 5px #000000);
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    align-items: center;
     text-align: center;
-    padding: 10px;
-    /* border: 1px solid black; */
+    padding: 30px;
+    width: 95%;
+    margin-bottom: 30px;
 }
 
 #helloText {
     color: #99E1D9;
     text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
     font-weight: 800;
-    margin-bottom: 0px;
+    margin: 0;
 }
 
 .unitText {
@@ -81,7 +82,51 @@ body {
     margin-bottom: 0px;
 }
 
+.contenttext {
+    margin: 0;
+    color: #000000;
+    font-weight: 750;
+    text-align: left;
+    font-size: 24px;
+    line-height: 30px;
+    text-indent: 60px;
+}
+
+.steptext {
+    color: #99E1D9;
+    filter: drop-shadow(2px 2px #5D576B) drop-shadow(1px 1px #F7567C);
+    font-weight: 800;
+    font-size: 24px;
+    display: block;
+    height: 39px;
+    width: 42px;
+    border-radius: 50%;
+    border: 4px solid #99E1D9;
+    background-color: #5d576b62;
+
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    padding-top: 3px;
+}
+
+.sidenotetext {
+    border: 2px dashed #F7567C;
+    border-radius: 5px;
+    background-color: #f7567c49;
+    color: #F7567C;
+    padding: 10px;
+    text-align: left;
+    margin: 0;
+    margin-top: 20px;
+}
+.sidenotetext::before {
+    content: "Side note:";
+    text-decoration: underline;
+}
+
 #description {
+    margin: 0;
     font-weight: 900;
     font-size: 60px;
     text-shadow: 2px 3px #6db1a9, 4px 6px #439289, 3px 4.5px 10px #FFFAE3;
@@ -91,7 +136,7 @@ body {
 }
 
 #next {
-    position: absolute;
+    position: fixed;
     border: 2px solid #000000;
     border-radius: 5px;
     background-color: #99E1D9;
@@ -113,9 +158,8 @@ body {
 #next:active {
     background-color: #FFFAE3;
 }
-
 #back {
-    position: absolute;
+    position: fixed;
     border: 2px solid #000000;
     border-radius: 5px;
     background-color: #99E1D9;
@@ -137,8 +181,10 @@ body {
 #back:active {
     background-color: #FFFAE3;
 }
-
 ::selection {
     color: #FCFCFC;
     background-color: #F7567C;
+}
+::-webkit-scrollbar {
+    display: none;
 }

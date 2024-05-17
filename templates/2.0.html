@@ -19,7 +19,7 @@
                     window.location.href = result;
                 }
             }
-        }, 2000)
+        }, 1000)
     </script>
     {% endif %}
 </head>
@@ -29,8 +29,23 @@
     <div class="center">
         <p id="helloText">Hello,</p>
         <p class="unitText">Welcome to Unit 2, </p>
-        <p class="unitText" id="description">And Beyond!</p>
+        <p class="unitText" id="description">And Beyond</p>
     </div>
-    <script> document.addEventListener('contextmenu', (e) => {e.preventDefault(); }) </script>
+    {% if session['role'] == 'teacher' %}
+    <div id="navbuttons">
+        <button id="back">Back</button>
+        <!-- <button id="next">Next</button> -->
+    </div>
+    <script>
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "1.2";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "0.0";
+        })
+    </script>
+    {% endif %}
 </body>
 </html>

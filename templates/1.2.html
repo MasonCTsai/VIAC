@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/content.css">
+    <title>1.2 Try It Yourself!</title>
+    {% if session['role'] == 'student' %}
+    <script>
+        setInterval(() => {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/getunit", false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+                console.log(result);
+                if (result !='1.2') {
+                    window.location.href = result;
+                }
+            }
+        }, 1000)
+    </script>
+    {% endif %}
+</head>
+<body>
+    <div id="gradientbackground"></div>
+    <div id="starbackground"></div>
+    <div id="content">
+        <div class="contentcontainer">
+            <p id="helloText">Hello,</p>
+            <p class="unitText">Welcome to Lesson 1.2, </p>
+            <p class="unitText" id="description">Try It Yourself</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                This is a short, interactive lesson and experiment to help you
+                understand the effects of visual impairment on an individual's life.
+            </p>
+            <p class="sidenotetext">
+                Make sure to read the entire step-by-step directions before blindfolding yourself!
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">1</p>
+            <p class="contenttext">
+                First, find a partner!
+            </p>
+            <img src="static/1.2step1.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">2</p>
+            <p class="contenttext">
+                Using a blindfold, cover one person's eyes securely, so you can't see any light. 
+                If you don't have a blindfold, a cloth will do!
+                Make sure you know where you are, in a safe environment, before blindfolding yourself.
+            </p>
+            <img src="static/1.2step2.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
+            <p class="sidenotetext">
+                Despite most cases of visual impairment not completely blocking out light, this activity simulates total darkness, 
+                as it more heavily emphasizes the differences of living with and without sight 
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">3</p>
+            <p class="contenttext">
+                Without being able to see, start to focus on the senses you do have access to. 
+                What do you smell, and what do you hear? 
+            </p>
+            <img src="static/1.2step3.png" alt="Smell, touch, and hearing" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">4</p>
+            <p class="contenttext">
+                Have a partner place a random item on a table in front of you, in a random spot.
+                Have the blindfolded partner attempt to locate and identify the object, using
+                only their unobstructed senses, being their senses of smell, touch, or hearing.
+            </p>
+            <img src="static/1.2step4.png" alt="Mystery Item" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">5</p>
+            <p class="contenttext">
+                Finally, discuss with your partner about the differences of living in and interacting with the
+                world around you with and without a sense of sight to guide you. How did it feel to
+                lose such a primary sense? Could you imagine living like this for the rest of your life?
+            </p>
+            <img src="static/1.2step5.png" alt="Discussion" style="margin-top: 20px; height: 600px;">
+        </div>
+    </div>
+    {% if session['role'] == 'teacher' %}
+    <div id="navbuttons">
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+    <script>
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "1.1";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "2.0";
+        })
+    </script>
+    {% endif %}
+</body>
+</html>

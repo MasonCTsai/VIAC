@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/content.css">
+    <title>1.1 Misconceptions</title>
+    {% if session['role'] == 'student' %}
+    <script>
+        setInterval(() => {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/getunit", false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+                console.log(result);
+                if (result !='1.1') {
+                    window.location.href = result;
+                }
+            }
+        }, 1000)
+    </script>
+    {% endif %}
+</head>
+<body>
+    <div id="gradientbackground"></div>
+    <div id="starbackground"></div>
+    <div id="content">
+        <div class="contentcontainer">
+            <p id="helloText">Hello,</p>
+            <p class="unitText">Welcome to Lesson 1.1, </p>
+            <p class="unitText" id="description">Misconceptions</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                <img src="static/lesson1.1.png" alt="Visual Impairment: Expectation versus Reality" style="width: 200px; height: 200px; float: right; margin: 10px;">
+                Blindness or visual impairment is a condition that
+                means that you cannot see well. This can affect one
+                or both eyes. Did you know that when someone is “blind”, 
+                it doesn't mean that they see pitch black? Most people 
+                who are blind can see some light, or flashes of light. 
+                They can also tell if an area is lit or dark. Others 
+                are not able to see light at all, though this is less common. 
+            </p>
+        </div>
+    </div>
+    {% if session['role'] == 'teacher' %}
+    <div id="navbuttons">
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+    <script>
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "1.0";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "1.2";
+        })
+    </script>
+    {% endif %}
+</body>
+</html>

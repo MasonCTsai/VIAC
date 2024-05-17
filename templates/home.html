@@ -12,7 +12,7 @@
     <div id="interactionBox">
         <img src="static/viaclogo.png" alt="V.I.A.C Logo" id="viaclogo">
         <form method="post" id="roomCodeForm">
-            <input type="text" name="roomCode" id="roomCode" value="{{ request.form['roomCode'] }}" required autofocus autocomplete="off" maxlength="6" alt="Insert Room Code" placeholder="Room Code">
+            <input type="text" name="roomCode" id="roomCode" value="{{ request.form['roomCode'] }}" required autofocus autocomplete="off" maxlength="6" alt="Insert Room Code" placeholder="Room Code" autocapitalize="characters">
             <input type="submit" name="codeSubmitButton" id="codeSubmitButton" value="Go!">
         </form>
     </div>
