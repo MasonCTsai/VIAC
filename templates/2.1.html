@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/content.css">
+    <title>2.1 How Do Blind People Get Around?</title>
+    {% if session['role'] == 'student' %}
+    <script>
+        // every second, the page makes a request to the server for the current unit
+        // if the current unit is not the current page, switch to it
+        setInterval(() => {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/getunit", false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+                console.log(result);
+                if (result !='2.1') {
+                    window.location.href = result;
+                }
+            }
+        }, 1000)
+    </script>
+    {% endif %}
+</head>
+<body>
+    <div id="gradientbackground"></div>
+    <div id="starbackground"></div>
+    <div id="content">
+        <div class="contentcontainer">
+            <p class="helloText">Hello,</p>
+            <p class="unitText">Welcome to Lesson 2.1, </p>
+            <p class="unitText description">How Do Blind People Get Around?</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                Blind people can have a harder time getting around, compared to those with sight. 
+                While they are usually able to do things on their own, sometimes
+                help is required, from family, service animals, or sometimes even the
+                kindness of strangers. In a world of technology and science, computers and 
+                products have been designed to improve the lives of those with visual impairments.
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                For example, an app known as “Seeing AI” uses a device's camera to recognize 
+                items and people in front of it, which is then used to notify the user of what
+                they might be looking at. Links to download Seeing AI are below.
+            </p>
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.seeingai&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer"><img src="static/googleplay.png" alt="Download Seeing AI on the Google Play Store" style="border: none; box-shadow: none; height: 50px;"></a>
+            <a href="https://apps.apple.com/us/app/seeing-ai/id999062298" target="_blank" rel="noopener noreferrer"><img src="static/appstore.png" alt="Download Seeing AI on the App Store" style="border: none; box-shadow: none; height: 50px;"></a>
+        </div>
+        <div class="contentcontainer">
+            <p class="unitText">Hands-On Activity</p>
+            <p class="unitText description">Try It Yourself!</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                This is a short, interactive lesson and experiment to help you
+                understand the effects of visual impairment on an person's life.
+            </p>
+            <br>
+            <p class="contenttext">
+                Materials
+            </p>
+            <p class="contenttext">
+                1. Some form of accessory, such as a hat, gloves, jacket, or scarf
+            </p>
+            <p class="contenttext">
+                2. Something to act as a blindfold, such as a blindfold or cloth
+            </p>
+            <p class="sidenotetext">
+                Make sure to read the entire step-by-step directions before blindfolding yourself!
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">1</p>
+            <p class="titletext">Get Ready!</p>
+            <p class="contenttext">
+                Layout the piece of clothing on a table in front of you
+            </p>
+            <img src="static/2.1step1.png" alt="Accessories!" style="margin-top: 20px; width: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">2</p>
+            <p class="titletext">Experience!</p>
+            <p class="contenttext">
+                With adult supervision or help, put on a blindfold.
+            </p>
+            <img src="static/2.1step2.png" alt="Experience!" style="margin-top: 20px; width: 400px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">3</p>
+            <p class="titletext">Do It!</p>
+            <p class="contenttext">
+                Start trying to put on your piece of clothing! If you have multiple, put them on one at a time. 
+                Be careful and keep awareness of your surroundings, and ensure adult supervision.
+            </p>
+            <img src="static/2.1step3.png" alt="Kid Putting on a Jacket" style="margin-top: 20px; width: 300px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">4</p>
+            <p class="titletext">Can You Do It?</p>
+            <p class="contenttext">
+                The goal is to experience what it's like to do everyday tasks without sight, such as dressing yourself.
+                Try to put on your accessory without looking!
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="titletext" style="text-indent: 0;">Reflection</p>
+            <p class="contenttext">
+                Now we understand how hard it can be to do things while missing one of our most important senses. 
+                Talking to a partner, what do you think are some other things visually impaired people might
+                struggle with?
+            </p>
+            <img src="static/2.1reflection.png" alt="Kid Thinking" style="margin-top: 20px; width: 600px;">
+        </div>
+    </div>
+    {% if session['role'] == 'teacher' %}
+    <div id="navbuttons">
+        <button id="tableofcontents">≡</button>
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+    <script>
+        // when each button is clicked, go to the designated page, only visible to the teacher
+        document.getElementById("tableofcontents").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "/tableofcontents";
+        })
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "2.0";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "2.2";
+        })
+    </script>
+    {% endif %}
+</body>
+</html>

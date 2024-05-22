@@ -141,11 +141,16 @@
     </div>
     {% if session['role'] == 'teacher' %}
     <div id="navbuttons">
+        <button id="tableofcontents">≡</button>
         <button id="back">Back</button>
         <button id="next">Next</button>
     </div>
     <script>
         // when each button is clicked, go to the designated page, only visible to the teacher
+        document.getElementById("tableofcontents").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "/tableofcontents";
+        })
         document.getElementById("back").addEventListener("click", (e) => {
             e.preventDefault();
             window.location.href = "1.0";

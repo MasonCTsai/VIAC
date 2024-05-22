@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session, Response
+from flask import Flask, render_template, request, session, Response, redirect
 import json
 
 # Create a flask object, which will manage the entire server side
@@ -32,10 +32,15 @@ def homePage():
         # When a code is input, validate it, if it was successful move onto either the table of contents (teacher), or the current unit (student)
         if validateCode(roomCode):
             if session['role'] == "teacher":
-                return render_template("tableofcontents.html", value=getValue())
+                return redirect("/tableofcontents", code=302)
             else:
                 return render_template(str(currentUnit) + ".html", value=getValue())
     return render_template("home.html")
+
+# table of contents page, for teachers only, allows quick travel to any particular lesson
+@app.route("/tableofcontents")
+def tableofcontents():
+    return render_template("tableofcontents.html", value=getValue())
 
 # any url route that is a float value off the base route
 # if the user is a teacher, the global current unit is set to the same page

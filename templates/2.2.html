@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="static/unitIntro.css">
-    <title>Unit 1</title>
+    <link rel="stylesheet" type="text/css" href="static/content.css">
+    <title>2.2 Service Animals</title>
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -17,7 +17,7 @@
             if (xmlhttp.status==200) {
                 result = xmlhttp.responseText;
                 console.log(result);
-                if (result !='1.0') {
+                if (result !='2.2') {
                     window.location.href = result;
                 }
             }
@@ -28,16 +28,21 @@
 <body>
     <div id="gradientbackground"></div>
     <div id="starbackground"></div>
-    <div class="center">
-        <p id="helloText">Hello,</p>
-        <p class="unitText">Welcome to Unit 1, </p>
-        <p class="unitText" id="description">Introduction to Types of Blindness</p>
+    <div id="content">
+        <div class="contentcontainer">
+            <p class="helloText">Hello,</p>
+            <p class="unitText">Welcome to Lesson 2.2, </p>
+            <p class="unitText description">Service Animals</p>
+        </div>
+        <div class="contentcontainer">
+            
+        </div>
     </div>
     {% if session['role'] == 'teacher' %}
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
-        <!-- <button id="back">Back</button> -->
-        <button id="next">Next</button>
+        <button id="back">Back</button>
+        <!-- <button id="next">Next</button> -->
     </div>
     <script>
         // when each button is clicked, go to the designated page, only visible to the teacher
@@ -45,13 +50,13 @@
             e.preventDefault();
             window.location.href = "/tableofcontents";
         })
-        // document.getElementById("back").addEventListener("click", (e) => {
-        //     e.preventDefault();
-        //     window.location.href = "0.0";
-        // })
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "2.1";
+        })
         document.getElementById("next").addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "1.1";
+            window.location.href = "0.0";
         })
     </script>
     {% endif %}
