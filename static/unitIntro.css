@@ -7,7 +7,7 @@ body {
 }
 
 #gradientbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background: linear-gradient(-45deg, #5D576B, #766e8d, #6f6585, #666270);
@@ -28,22 +28,24 @@ body {
 }
 
 #starbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-image: url("stars.png");
     background-size: 25%;
-    animation: pan 10s linear infinite;
     filter: drop-shadow(0px 0px 3px #FFFAE3);
+    animation: stars 60s linear infinite;
 }
 
-@keyframes pan {
+@keyframes stars {
     0% {
-        transform: 0% 0%;
+        background-position: 0% 50%;
     }
-
+    50% {
+        background-position: 50% 100%;
+    }
     100% {
-        transform: 100% 0%;
+        background-position: 100% 150%;
     }
 }
 
@@ -66,15 +68,15 @@ body {
 }
 
 #helloText {
-    color: #99E1D9;
-    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
+    color: #5D576B;
+    text-shadow: 1px 1.5px #f7567c00;
     font-weight: 800;
-    margin-bottom: 0px;
+    margin: 0;
 }
 
 .unitText {
-    color: #99E1D9;
-    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
+    color: #5D576B;
+    text-shadow: 2px 3px #f7567c72;
     font-weight: 800;
     font-size: 50px;
     margin-top: 0px;
@@ -82,9 +84,10 @@ body {
 }
 
 #description {
+    margin: 0;
     font-weight: 900;
     font-size: 60px;
-    text-shadow: 2px 3px #6db1a9, 4px 6px #439289, 3px 4.5px 10px #FFFAE3;
+    text-shadow: 2px 3px #99E1D9, 4px 6px #6ec1b7;
 }
 #description::after {
     content: "!";

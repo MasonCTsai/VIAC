@@ -39,6 +39,16 @@ html {
     background-image: url("stars.png");
     background-size: 25%;
     filter: drop-shadow(0px 0px 3px #FFFAE3);
+    animation: stars 150s linear infinite;
+}
+
+@keyframes stars {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 #content {
@@ -50,6 +60,29 @@ html {
     align-items: center;
     text-align: center;
     margin-top: 100px;
+}
+
+.helloText {
+    color: #5D576B;
+    text-shadow: 1px 1.5px #f7567c00;
+    font-weight: 800;
+    margin: 0;
+}
+
+.unitText {
+    color: #5D576B;
+    text-shadow: 2px 3px #f7567c72;
+    font-weight: 800;
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.description {
+    margin: 0;
+    font-weight: 900;
+    font-size: 60px;
+    text-shadow: 2px 3px #99E1D9, 4px 6px #6ec1b7;
 }
 
 .contentcontainer {
@@ -66,30 +99,30 @@ html {
     margin-bottom: 30px;
 }
 
-#helloText {
-    color: #99E1D9;
-    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
-    font-weight: 800;
-    margin: 0;
-}
-
-.unitText {
-    color: #99E1D9;
-    text-shadow: 1px 0px #0000002e, -1px 0px #0000002e, 0px 1px #0000002e, 0px -1px #0000002e;
-    font-weight: 800;
-    font-size: 50px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 .contenttext {
     margin: 0;
-    color: #000000;
+    color: #5D576B;
     font-weight: 750;
     text-align: left;
     font-size: 24px;
     line-height: 30px;
     text-indent: 60px;
+    width: 100%;
+}
+
+.titletext {
+    margin: 0;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #5D576B;
+    font-weight: 800;
+    text-align: left;
+    font-size: 40px;
+    line-height: 30px;
+    text-indent: 60px;
+    width: 100%;
+    text-shadow: 2px 3px#99E1D9;
+    transform: translate(0, -7px);
 }
 
 .steptext {
@@ -125,14 +158,62 @@ html {
     text-decoration: underline;
 }
 
-#description {
-    margin: 0;
-    font-weight: 900;
-    font-size: 60px;
-    text-shadow: 2px 3px #6db1a9, 4px 6px #439289, 3px 4.5px 10px #FFFAE3;
+.tooltip {
+    position: relative;
+    background-color: #99E1D9;
 }
-#description::after {
-    content: "!";
+.tooltiptext {
+        visibility: hidden;
+        background-color: #5d576bdd;
+        color: #FFFAE3;
+        text-align: left;
+        border-radius: 5px;
+        padding: 5px;
+        position: absolute;
+        width: 250px;
+        margin-left: 10px;
+        bottom: -50px;
+        z-index: 1;
+        text-indent: 0;
+        filter: drop-shadow(2px 3px 5px black);
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    animation: fadein .5s ease 1;
+}
+.tooltip:hover {
+    animation: hovering .2s ease 1;
+    background-color: #F7567C;
+}
+
+@keyframes hovering {
+    0% {
+        background-color: #99E1D9;
+    }
+    100% {
+        background-color: #F7567C;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+img {
+    border: 5px solid #5D576B;
+    box-shadow: 5px 5px 10px #000000;
+}
+br {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #next {
@@ -154,6 +235,7 @@ html {
 }
 #next:hover {
     background-color: #F7567C;
+    cursor: pointer;
 }
 #next:active {
     background-color: #FFFAE3;
@@ -177,6 +259,7 @@ html {
 }
 #back:hover {
     background-color: #F7567C;
+    cursor: pointer;
 }
 #back:active {
     background-color: #FFFAE3;

@@ -6,7 +6,7 @@ body {
 }
 
 #gradientbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background: linear-gradient(-45deg, #5D576B, #766e8d, #6f6585, #666270);
@@ -27,22 +27,24 @@ body {
 }
 
 #starbackground {
-    position: absolute;
+    position: fixed;
     height: 100%;
     width: 100%;
     background-image: url("stars.png");
     background-size: 25%;
-    animation: pan 10s linear infinite;
     filter: drop-shadow(0px 0px 3px #FFFAE3);
+    animation: stars 60s linear infinite;
 }
 
-@keyframes pan {
+@keyframes stars {
     0% {
-        transform: 0% 0%;
+        background-position: 0% 50%;
     }
-
+    50% {
+        background-position: 50% 100%;
+    }
     100% {
-        transform: 100% 0%;
+        background-position: 100% 150%;
     }
 }
 

@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
-    <title>1.2 Try It Yourself!</title>
+    <title>1.2 Not All Blindness is Equal</title>
     {% if session['role'] == 'student' %}
     <script>
+        // every second, the page makes a request to the server for the current unit
+        // if the current unit is not the current page, switch to it
         setInterval(() => {
             var result = null;
             var xmlhttp = new XMLHttpRequest();
@@ -28,64 +30,115 @@
     <div id="starbackground"></div>
     <div id="content">
         <div class="contentcontainer">
-            <p id="helloText">Hello,</p>
+            <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 1.2, </p>
-            <p class="unitText" id="description">Try It Yourself</p>
+            <p class="unitText description">Not All Blindness is Equal</p>
         </div>
         <div class="contentcontainer">
             <p class="contenttext">
-                This is a short, interactive lesson and experiment to help you
-                understand the effects of visual impairment on an individual's life.
+                There are many different types of blindness.  
+                Those with visual impairment can develop it later in life, 
+                while others were born with it.  Blindness that people are 
+                born with are called  <strong class="tooltip">congenital<span class="tooltiptext">
+                    (kuhn·JEH·nuh·tl) A type of visual impairment that is possessed from birth</span></strong>. 
+                There can be many different causes of blindness, and we'll talk more about them below.
             </p>
-            <p class="sidenotetext">
-                Make sure to read the entire step-by-step directions before blindfolding yourself!
+            <p class="sidenotetext" style="::before {content: '! Warning ! ';}">
+                Some of the images in this lesson may be triggering or graphic. If this is an issue, please 
+                refrain from continuing with this particular lesson.
             </p>
         </div>
         <div class="contentcontainer">
             <p class="steptext">1</p>
             <p class="contenttext">
-                First, find a partner!
+                Blindness can be caused by the loss of one or both of a person's eyes. 
+                This is known as <strong class="tooltip">anophthalmia<span class="tooltiptext">(an-off-THAL-mee-ah) When a baby 
+                    is born with one or both of its eyes missing.</span></strong>.  Try pronouncing anophthalmia! 
+                (Hint: hover over the highlighted word for its pronunciation!)
             </p>
-            <img src="static/1.2step1.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
+            <img src="static/1.2anophthalmia.png" alt="Image of Anophthalmia" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">2</p>
             <p class="contenttext">
-                Using a blindfold, cover one person's eyes securely, so you can't see any light. 
-                If you don't have a blindfold, a cloth will do!
-                Make sure you know where you are, in a safe environment, before blindfolding yourself.
+                Others may be born with both of their eyes, 
+                but things can go wrong with their growth, 
+                leading to the baby being born with eyes that are too small.  
+                This can happen to one or both eyes.
             </p>
-            <img src="static/1.2step2.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
-            <p class="sidenotetext">
-                Despite most cases of visual impairment not completely blocking out light, this activity simulates total darkness, 
-                as it more heavily emphasizes the differences of living with and without sight 
-            </p>
+            <img src="static/1.2microphthalmia.png" alt="Image of Microphthalmia" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">3</p>
             <p class="contenttext">
-                Without being able to see, start to focus on the senses you do have access to. 
-                What do you smell, and what do you hear? 
+                Besides smaller eyes, poor eyesight can be 
+                caused by deformities in the eye, especially 
+                the <strong class="tooltip">iris<span class="tooltiptext">The colored ring around the black dot on your eyes</span></strong>.
+                This can cause complete blindness in worse cases.
             </p>
-            <img src="static/1.2step3.png" alt="Smell, touch, and hearing" style="margin-top: 20px; height: 600px;">
+            <img src="static/1.2coloboma.png" alt="Image of Coloboma" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">4</p>
             <p class="contenttext">
-                Have a partner place a random item on a table in front of you, in a random spot.
-                Have the blindfolded partner attempt to locate and identify the object, using
-                only their unobstructed senses, being their senses of smell, touch, or hearing.
+                <strong class="tooltip">Cataracts<span class="tooltiptext">Cloudy, gray films within the eyes that can block vision</span></strong>
+                are cloudy, gray films that develop on the inside of the eyeball, leading to a loss of vision. 
+                They are caused by a variety of reasons, including old age, or a person can be born with them.  
+                These can become worse and worse, where early stages do not cause total blindness.  Over time, 
+                though, they can damage the eye enough to cause complete blindness.
             </p>
-            <img src="static/1.2step4.png" alt="Mystery Item" style="margin-top: 20px; height: 600px;">
+            <img src="static/1.2cataracts.png" alt="Image of Cataracts" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">5</p>
             <p class="contenttext">
-                Finally, discuss with your partner about the differences of living in and interacting with the
-                world around you with and without a sense of sight to guide you. How did it feel to
-                lose such a primary sense? Could you imagine living like this for the rest of your life?
+                <strong class="tooltip">Age-related macular degeneration (AMD)<span class="tooltiptext">Also called AMD, it is when 
+                    the macula of your eye worsens as you age and grow older.
+                </span></strong> 
+                is when the <strong class="tooltip">macula<span class="tooltiptext">The part of the eye that accepts and allows you to process light</span></strong> 
+                of your eye decays as you grow older. 
+                The macula is the part at the back of your eye that actually receives and processes light, 
+                allowing you to see. As you grow older, the macula can be damaged, leading to a loss of vision, 
+                though usually not completely. Though AMD cannot be seen from the outside, images like the one below
+                will sometimes show a small spots on the eye.
             </p>
-            <img src="static/1.2step5.png" alt="Discussion" style="margin-top: 20px; height: 600px;">
+            <img src="static/1.2macular.png" alt="Image of a Degenerated Macula" style="margin-top: 20px; width: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">6</p>
+            <p class="contenttext">
+                <strong class="tooltip">Diabetic retinopathy<span class="tooltiptext">(DIE-uh-beh-tick reh-ten-OP-uh-thee) 
+                The loss of vision because of diabetes</span></strong> is when you lose your vision due to diabetes. 
+                <strong class="tooltip">Diabetes<span class="tooltiptext">A condition that causes a person to not have enough sugar in their blood,
+                    leading to loss of energy.
+                </span></strong> 
+                is when you have naturally low amounts of sugar in your blood, meaning your cells aren't able 
+                to get the energy they need. This causes damage to the eye, eventually leading to blindness.
+            </p>
+            <img src="static/1.2diabeticretinopathy.png" alt="Image of Diabetic Retinopathy" style="margin-top: 20px; width: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">7</p>
+            <p class="contenttext">
+                <strong class="tooltip">Glaucoma<span class="tooltiptext">(gla-oh-KOH-muh) A condition that increases the pressure in the eyeball, leading to a loss of sight</span></strong> 
+                is when the nerve that connects your eye to your brain is damaged over a lot of time 
+                due to a lot of pressure inside the eye. Can you pronounce glaucoma? The disease is incurable, 
+                and is a common cause of blindness, leading to loss of vision, or even complete blindness.  It 
+                can be congenital (remember, that means it was developed at birth!), or be gotten later in life.  
+                Visually, it is hard to see the effects of glaucoma, though it can sometimes cause redness in the eyes.
+            </p>
+            <img src="static/1.2glaucoma.png" alt="Image of Glaucoma" style="margin-top: 20px; width: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="unitText">Brain-Power Activity</p>
+            <p class="unitText description">Let's Think!</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                With a partner, discuss the difference between partial and complete blindness, 
+                and talk about a cause of blindness you are most interested in.
+            </p>
+            <img src="static/1.2discussion.png" alt="Discussion" style="margin-top: 20px; width: 600px;">
         </div>
     </div>
     {% if session['role'] == 'teacher' %}
@@ -94,6 +147,7 @@
         <button id="next">Next</button>
     </div>
     <script>
+        // when each button is clicked, go to the designated page, only visible to the teacher
         document.getElementById("back").addEventListener("click", (e) => {
             e.preventDefault();
             window.location.href = "1.1";

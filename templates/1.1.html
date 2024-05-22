@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
-    <title>1.1 Misconceptions</title>
+    <title>1.1 What Does It Mean To Be Blind?</title>
     {% if session['role'] == 'student' %}
     <script>
+        // every second, the page makes a request to the server for the current unit
+        // if the current unit is not the current page, switch to it
         setInterval(() => {
             var result = null;
             var xmlhttp = new XMLHttpRequest();
@@ -28,21 +30,113 @@
     <div id="starbackground"></div>
     <div id="content">
         <div class="contentcontainer">
-            <p id="helloText">Hello,</p>
+            <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 1.1, </p>
-            <p class="unitText" id="description">Misconceptions</p>
+            <p class="unitText description">What Does It Mean To Be Blind?</p>
         </div>
         <div class="contentcontainer">
             <p class="contenttext">
-                <img src="static/lesson1.1.png" alt="Visual Impairment: Expectation versus Reality" style="width: 200px; height: 200px; float: right; margin: 10px;">
-                Blindness or visual impairment is a condition that
-                means that you cannot see well. This can affect one
-                or both eyes. Did you know that when someone is “blind”, 
-                it doesn't mean that they see pitch black? Most people 
-                who are blind can see some light, or flashes of light. 
-                They can also tell if an area is lit or dark. Others 
-                are not able to see light at all, though this is less common. 
+                <strong class="tooltip">Blindness<span class="tooltiptext">A condition that means you are unable to see well</span></strong> is a condition that means that you cannot see well.
             </p>
+            <br>
+            <p class="contenttext">
+                This can affect one or both eyes. Another name for blindness is 
+                visual impairment. 
+            </p>
+            <br>
+            <p class="contenttext">
+                <img src="static/lesson1.1.png" alt="Visual Impairment: Expectation versus Reality" style="width: 250px; margin: 10px; float: right;">
+                Did you know that when someone is “blind”, it 
+                doesn't mean that they see only pitch black? 
+            </p>
+            <br>
+            <p class="contenttext">
+                Most people who are blind can see some light, or flashes of light, meaning that 
+                if they walk into a room, they can tell if the lights are on or off. 
+            </p>
+            <br>
+            <p class="contenttext">
+                Still though, some people do see pitch black, but this is very rare. 
+                Being completely unable to see light is called “<strong class="tooltip">total blindness<span class="tooltiptext">When someone is completely unable to see light</span></strong>.”,
+                also known as complete blindness.
+            </p>
+            <br>
+            <p class="contenttext">
+                Those who are completely blind are unable to see the difference between a bright room and a dark one.
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="unitText">Hands-On Activity</p>
+            <p class="unitText description">Try It Yourself!</p>
+        </div>
+        <div class="contentcontainer">
+            <p class="contenttext">
+                This is a short, interactive lesson and experiment to help you
+                understand the effects of visual impairment on an person's life.
+            </p>
+            <p class="sidenotetext">
+                Make sure to read the entire step-by-step directions before blindfolding yourself!
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">1</p>
+            <p class="titletext">Partner Up!</p>
+            <p class="contenttext">
+                First, find a partner!
+            </p>
+            <img src="static/1.1step1.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">2</p>
+            <p class="titletext">Experience</p>
+            <p class="contenttext">
+                Using a blindfold, cover one person's eyes securely, so you can't see any light. 
+                If you don't have a blindfold, a cloth will do!
+                Make sure you know where you are, in a safe environment, before blindfolding yourself.
+            </p>
+            <img src="static/1.1step2.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
+            <p class="sidenotetext">
+                Despite most cases of visual impairment not completely blocking out light, this activity 
+                still uses total blindness.  This is because it makes the differences between living with 
+                and without sight more obvious.            
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">3</p>
+            <p class="titletext">Focus</p>
+            <p class="contenttext">
+                Without being able to see, start to focus on the senses you do have access to. 
+                What do you smell, and what do you hear? 
+            </p>
+            <img src="static/1.1step3.png" alt="Smell, touch, and hearing" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">4</p>
+            <p class="titletext">What Is It?</p>
+            <p class="contenttext">
+                Have a partner place a random item on a table in front of you. 
+                Have the blindfolded partner try to find and name the object, 
+                using the rest of their senses.
+            </p>
+            <img src="static/1.1step4.png" alt="Mystery Item" style="margin-top: 20px; height: 600px;">
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">5</p>
+            <p class="titletext">Discuss!</p>
+            <p class="contenttext">
+                Finally, discuss with your partner about the differences of living in and interacting with the
+                world around you with and without a sense of sight to guide you.
+            </p>
+            <br>
+            <p class="contenttext">
+                1. Did you notice how difficult it was to get around, missing such an important sense?
+            </p>
+            <br>
+            <p class="contenttext">
+                2. How were you able to make use of your other senses to make up for your loss of sight?
+                Which sense did you rely the strongest on?
+            </p>
+            <img src="static/1.1step5.png" alt="Discussion" style="margin-top: 20px; height: 600px;">
         </div>
     </div>
     {% if session['role'] == 'teacher' %}
@@ -51,6 +145,7 @@
         <button id="next">Next</button>
     </div>
     <script>
+        // when each button is clicked, go to the designated page, only visible to the teacher
         document.getElementById("back").addEventListener("click", (e) => {
             e.preventDefault();
             window.location.href = "1.0";

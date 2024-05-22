@@ -7,6 +7,8 @@
     <title>Uh oh!</title>
     {% if session['role'] == 'student' %}
     <script>
+        // every second, the page makes a request to the server for the current unit
+        // if the current unit is not the current page, switch to it
         setInterval(() => {
             var result = null;
             var xmlhttp = new XMLHttpRequest();
