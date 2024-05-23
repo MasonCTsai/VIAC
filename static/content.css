@@ -119,6 +119,8 @@ html {
     backdrop-filter: blur(10px) hue-rotate(180deg);
     padding: 30px;
     border-radius: 5px;
+    text-indent: 0;
+    text-align: center;
 }
 .spoileroverlay:hover {
     opacity: 0;
