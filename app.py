@@ -40,6 +40,11 @@ def homePage():
 # table of contents page, for teachers only, allows quick travel to any particular lesson
 @app.route("/tableofcontents")
 def tableofcontents():
+    try:
+        if session['role'] != "teacher":
+            return redirect("/", code=302)
+    except:
+        return redirect("/", code=302)
     return render_template("tableofcontents.html", value=getValue())
 
 # any url route that is a float value off the base route
@@ -48,8 +53,11 @@ def tableofcontents():
 @app.route("/<float:v>", methods = ["GET"])
 def unit1Page(v):
     global currentUnit
-    if session['role'] == "teacher":
-        currentUnit = v
+    try:
+        if session['role'] == "teacher":
+            currentUnit = v
+    except:
+        return redirect("/", code=302)
     return render_template(str(currentUnit) + ".html", value=getValue())
 
 # data url, returns the current unit, so that student sides can update themselves

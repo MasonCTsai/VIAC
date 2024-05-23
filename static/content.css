@@ -1,3 +1,4 @@
+/* Set font family and clear margins and padding for divs to cover the background, and allow scrolling*/
 body {
     font-family: sans-serif;
     background: #5D576B;
@@ -7,10 +8,12 @@ body {
     min-height: 100%;
 }
 
+/* I don't know why this is here but I'm scared to remove it */
 html {
     height: 100vh;
 }
 
+/* makes a div as a gradient background between grey and gray (it's noticeable I swear) */
 #gradientbackground {
     position: fixed;
     height: 100%;
@@ -20,6 +23,7 @@ html {
     animation: gradient 15s ease infinite;
 }
 
+/* Animation that scrolls the gradient */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -32,6 +36,7 @@ html {
     }
 }
 
+/* Makes a star background out of a div */
 #starbackground {
     position: fixed;
     height: 100%;
@@ -42,6 +47,7 @@ html {
     animation: stars 150s linear infinite;
 }
 
+/* Makes the star background scroll */
 @keyframes stars {
     0% {
         background-position: 0% 50%;
@@ -51,6 +57,7 @@ html {
     }
 }
 
+/* Aligns the entirety of the content section */
 #content {
     width: 1000px;
     max-width: 75vw;
@@ -62,6 +69,7 @@ html {
     margin-top: 100px;
 }
 
+/* formatting for text that says hello (small, simple) */
 .helloText {
     color: #5D576B;
     text-shadow: 1px 1.5px #f7567c00;
@@ -69,6 +77,7 @@ html {
     margin: 0;
 }
 
+/* formatting for pre-subtext (medium, blue drop shadow) */
 .unitText {
     color: #5D576B;
     text-shadow: 2px 3px #f7567c72;
@@ -78,6 +87,7 @@ html {
     margin-bottom: 0px;
 }
 
+/* formatting for description of unit (large, double red drop shadow) */
 .description {
     margin: 0;
     font-weight: 900;
@@ -85,6 +95,7 @@ html {
     text-shadow: 2px 3px #99E1D9, 4px 6px #6ec1b7;
 }
 
+/* A general box for content (text, images, etc.) */
 .contentcontainer {
     border: 2px solid #000000;
     border-radius: 5px;
@@ -99,6 +110,33 @@ html {
     margin-bottom: 30px;
 }
 
+.spoileroverlay {
+    position: absolute;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px) hue-rotate(180deg);
+    padding: 30px;
+    border-radius: 5px;
+}
+.spoileroverlay:hover {
+    opacity: 0;
+    animation: unblur 0.3s ease 1;
+}
+
+@keyframes unblur {
+    0% {
+        opacity: 1;
+        backdrop-filter: blur(10px) hue-rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        backdrop-filter: blur(0px) hue-rotate(0deg);
+    }
+}
+
+/* General text, indented */
 .contenttext {
     margin: 0;
     color: #5D576B;
@@ -110,6 +148,7 @@ html {
     width: 100%;
 }
 
+/* Title for content containers */
 .titletext {
     margin: 0;
     margin-left: 10px;
@@ -125,6 +164,7 @@ html {
     transform: translate(0, -7px);
 }
 
+/* 1 per contentcontainer, creates a circle with text inside (usually numbers) */
 .steptext {
     color: #99E1D9;
     filter: drop-shadow(2px 2px #5D576B) drop-shadow(1px 1px #F7567C);
@@ -143,6 +183,7 @@ html {
     padding-top: 3px;
 }
 
+/* A red box that will hold any side note (should be in the bottom), prefixes with the words "Side note:" */
 .sidenotetext {
     border: 2px dashed #F7567C;
     border-radius: 5px;
@@ -158,6 +199,7 @@ html {
     text-decoration: underline;
 }
 
+/* highlights tooltips to be hovered and reveal more text (definitions or pronunciations) */
 .tooltip {
     position: relative;
     background-color: #99E1D9;
@@ -186,6 +228,7 @@ html {
     background-color: #F7567C;
 }
 
+/* Fades in colors and tooltip */
 @keyframes hovering {
     0% {
         background-color: #99E1D9;
@@ -194,7 +237,6 @@ html {
         background-color: #F7567C;
     }
 }
-
 @keyframes fadein {
     0% {
         opacity: 0;
@@ -204,6 +246,7 @@ html {
     }
 }
 
+/* a button to return you to the table of contents */
 #tableofcontents {
     position: fixed;
     border: 2px solid #000000;
@@ -226,10 +269,12 @@ html {
     background-color: #FFFAE3;
 }
 
+/* images will have a border and drop shadow */
 img {
     border: 5px solid #5D576B;
     box-shadow: 5px 5px 10px #000000;
 }
+/* line breaks won't be selectable */
 br {
     -moz-user-select: -moz-none;
     -khtml-user-select: none;
@@ -238,6 +283,7 @@ br {
     user-select: none;
 }
 
+/* back and next buttons */
 #next {
     position: fixed;
     border: 2px solid #000000;
@@ -290,6 +336,7 @@ br {
     color: #FCFCFC;
     background-color: #F7567C;
 }
+/* removes scrollbar */
 ::-webkit-scrollbar {
     display: none;
 }

@@ -1,3 +1,4 @@
+/* Set font family and clear margins and padding for divs to cover the background, and allow scrolling*/
 body {
     font-family: sans-serif;
     background: #5D576B;
@@ -5,6 +6,7 @@ body {
     padding: 0;
 }
 
+/* makes a div as a gradient background between grey and gray (it's noticeable I swear) */
 #gradientbackground {
     position: fixed;
     height: 100%;
@@ -14,6 +16,7 @@ body {
     animation: gradient 15s ease infinite;
 }
 
+/* Animation that scrolls the gradient */
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
@@ -26,6 +29,7 @@ body {
     }
 }
 
+/* Makes a star background out of a div */
 #starbackground {
     position: fixed;
     height: 100%;
@@ -36,18 +40,17 @@ body {
     animation: stars 60s linear infinite;
 }
 
+/* Makes the star background scroll */
 @keyframes stars {
     0% {
         background-position: 0% 50%;
     }
-    50% {
-        background-position: 50% 100%;
-    }
     100% {
-        background-position: 100% 150%;
+        background-position: 100% 50%;
     }
 }
 
+/* Just a container to center everything */
 #mainbox {
     display: flex;
     margin: 0;
@@ -63,6 +66,7 @@ body {
     height: 600px;
 }
 
+/* welcome text */
 #welcome {
     width: 100%;
     text-align: center;
@@ -73,12 +77,7 @@ body {
     margin: 0;
 }
 
-#unitlist {
-    width: 100%;
-    text-align: center;
-    align-items: center
-}
-
+/* holds an entire unit, including title and lessons */
 .unitbox {
     border: 2px solid #000000;
     border-radius: 5px;
@@ -92,11 +91,13 @@ body {
     margin: 10px;
 }
 
+/* Styling for unit headers, gets mostly overwritten by anchor styling */
 .unittext {
     margin: 0;
     font-size: 24px;
 }
 
+/* Positions and sizes subunit titles */
 .subunittext {
     margin-top: 5px;
     margin-bottom: 5px;
@@ -104,6 +105,7 @@ body {
     font-size: 14px;
 }
 
+/* Style anchors to be very noticeable and clickable */
 a:link {
     color: #99E1D9;
 }
@@ -120,7 +122,6 @@ a {
     text-shadow: 1px 0px #000000, -1px 0px #000000, 0px 1px #000000, 0px -1px #000000;
     text-decoration: none;
 }
-
 a::after {
     content: " ▶";
 }
