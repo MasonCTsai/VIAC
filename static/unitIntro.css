@@ -1,4 +1,4 @@
-/* Set font family and clear margins and padding for divs to cover the background, and allow scrolling*/
+/* Set font family and clear margins and padding for divs to cover the background, and hides off page elements*/
 body {
     font-family: sans-serif;
     background: #5D576B;

@@ -1,0 +1,150 @@
+<!-- Designates the pages as HTML5 -->
+<!DOCTYPE html>
+<!-- sets the default language to english -->
+<html lang="en">
+<!-- header, sets tab name, character set, and width -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/content.css">
+    <title>3.1 What Can You Do?</title>
+    <!-- if the user is a student, run the script -->
+    {% if session['role'] == 'student' %}
+    <script>
+        // every second, the page makes a request to the server for the current unit
+        // if the current unit is not the current page, switch to it
+        setInterval(() => {
+            var result = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", "/getunit", false);
+            xmlhttp.send();
+            if (xmlhttp.status==200) {
+                result = xmlhttp.responseText;
+                console.log(result);
+                if (result !='3.1') {
+                    window.location.href = result;
+                }
+            }
+        }, 1000)
+    </script>
+    {% endif %}
+</head>
+<!-- body of the page, where everything is -->
+<body>
+    <!-- creates a gradient background with CSS -->
+    <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
+    <div id="starbackground"></div>
+    <!-- container to center the main content -->
+    <div id="content">
+        <!-- make a content box -->
+        <div class="contentcontainer">
+            <!-- standard page starter, introducing the lesson -->
+            <p class="helloText">Hello,</p>
+            <p class="unitText">Welcome to Lesson 3.1, </p>
+            <p class="unitText description">What Can You Do?</p>
+        </div>
+        <!-- another box for more elaboration -->
+        <div class="contentcontainer">
+            <!-- make a paragraph, styled -->
+            <p class="contenttext">
+                <img src="static/3.1worldpeace.png" alt="Peace Among All" style="width: 250px; margin: 10px; float: right;">
+                You.  Yes, you, the person reading this right now.  
+                You can learn all about the different types of blindness, 
+                what they do, and how, but none of it matters if you do nothing 
+                with that knowledge.  That being said, what can you do?
+            </p>
+            <br>
+            <p class="contenttext">
+                We as a community need to spread peace and kindness to others. 
+                Making sure that everyone is respected no matter their disability 
+                is very very important. 
+            </p>
+            <br>
+            <p class="contenttext">
+                Let's start with the ways that you can help to start making a 
+                difference with the discrimination blind people face.
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">1</p>
+            <p class="titletext">Using Kind Language and Inclusive Words</p>
+            <p class="contenttext">
+                You may be wondering what it means to use more inclusive words. 
+                This means: don't be disrespectful to a person with blindness. 
+                You shouldn't jump to conclusions and make assumptions about their 
+                ability to get things done. 
+            </p>
+            <br>
+            <p class="contenttext">
+                <img src="static/3.1step1.png" alt="Friends Between All" style="width: 250px; margin: 10px; float: right;">
+                For example, being quick to assume that a classmate who is blind cannot 
+                join in a game or activity with others in the class. This is offensive 
+                towards that classmate and can cause them to get hurt because they, just 
+                like you, can do day-to-day activities. It is important that we encourage 
+                those with blindness to live their lives normally, despite their disability. 
+                We, as society should work together to provide support towards taking away 
+                any obstacles that stop them from receiving full participation in our world.
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">2</p>
+            <p class="titletext">Getting to Know People with Blindness</p>
+            <p class="contenttext">
+                <img src="static/3.1step2.png" alt="Friends Between All" style="width: 250px; margin: 10px; float: left; margin-right: 20px;">
+                What do you think is the best way to get to know someone? Well, 
+                luckily it is actually very simple! All you need to do is talk to them. 
+                Find out the things they like and dislike, their favorite foods, become 
+                friends! It is that simple. You will probably even find some things that 
+                you guys have in common. Getting to know a person with blindness and 
+                talking to them, is the best way to overcome opinions that are made up 
+                and based on no actual reasons.  
+            </p>
+        </div>
+        <div class="contentcontainer">
+            <p class="steptext">3</p>
+            <p class="titletext">Share Your Knowledge!</p>
+            <p class="contenttext">
+                You have the opportunity to share with others the knowledge that you 
+                have learned through VIAC, and share that knowledge with others that 
+                aren't as familiar with the troubles that blind people face, like your 
+                friends, classmates, or family members. With this, you are spreading 
+                awareness, making it more and more possible for a difference to be made 
+                in not only our communities, but in our world.
+            </p>
+            <img src="static/3.1step3.png" alt="Share With All" style="width: 600px; margin: 10px;">
+            <p class="contenttext">
+                Thank you!
+            </p> <br>
+            <p class="contenttext">
+                ~ The Thinkers
+            </p>
+        </div>
+    </div>
+    <!-- if the user is a teacher -->
+    {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
+    <div id="navbuttons">
+        <button id="tableofcontents">≡</button>
+        <button id="back">Back</button>
+        <!-- <button id="next">Next</button> -->
+    </div>
+    <script>
+        // when each button is clicked, go to the designated page, only visible to the teacher
+        document.getElementById("tableofcontents").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "/tableofcontents";
+        })
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "3.0";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "0.0";
+        })
+    </script>
+    {% endif %}
+</body>
+</html>

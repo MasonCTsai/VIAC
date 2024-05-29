@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/unitIntro.css">
-    <title>Uh oh!</title>
+    <title>Unit 3</title>
     <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
@@ -21,7 +21,7 @@
             if (xmlhttp.status==200) {
                 result = xmlhttp.responseText;
                 console.log(result);
-                if (result !='0.0') {
+                if (result !='3.0') {
                     window.location.href = result;
                 }
             }
@@ -37,10 +37,34 @@
     <div id="starbackground"></div>
     <!-- container to center the main content -->
     <div class="center">
-        <!-- content and text, separated for separate styling and line breaks -->
         <p id="helloText">Hello,</p>
-        <p class="unitText">Looks like you're a bit</p>
-        <p class="unitText" id="description">early</p>
+        <p class="unitText">Welcome to Unit 3, </p>
+        <p class="unitText" id="description">Beyond</p>
     </div>
+    <!-- if the user is a teacher -->
+    {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
+    <div id="navbuttons">
+        <button id="tableofcontents">≡</button>
+        <button id="back">Back</button>
+        <button id="next">Next</button>
+    </div>
+    <script>
+        // when each button is clicked, go to the designated page, only visible to the teacher
+        document.getElementById("tableofcontents").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "/tableofcontents";
+        })
+        document.getElementById("back").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "2.2";
+        })
+        document.getElementById("next").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "3.1";
+        })
+    </script>
+    {% endif %}
 </body>
 </html>

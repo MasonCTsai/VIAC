@@ -1,21 +1,35 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/home.css">
     <title>VIAC</title>
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- main content box to center everything -->
     <div id="interactionBox">
-        <img src="static/viaclogo.png" alt="V.I.A.C Logo" id="viaclogo">
+        <!-- VIAC logo above the input fields -->
+        <img src="static/viac letterhead.png" alt="V.I.A.C Logo" id="viaclogo">
+        <!-- tagline, styled -->
+        <p id="tagline">Start learning to make <br>the world a better place!</p>
+        <!-- input field container, styled into a card -->
         <form method="post" id="roomCodeForm">
+            <!-- input for the code used to determine the role, max 6 characters, auto uppercase, and no autocomplete -->
             <input type="text" name="roomCode" id="roomCode" value="{{ request.form['roomCode'] }}" required autofocus autocomplete="off" maxlength="6" alt="Insert Room Code" placeholder="Room Code" autocapitalize="characters">
+            <!-- input button to submit the code -->
             <input type="submit" name="codeSubmitButton" id="codeSubmitButton" value="Go!">
         </form>
     </div>
     <a href="https://github.com/MasonCTsai/VIAC" target="_blank" rel="noopener noreferrer"><img src="static/thinkersletterhead.png" alt="The Thinkers logo" id="thinkerslogo"></a>
+    <a href="/sources" id="workscited">Works Cited</a>
 </body>
 </html>

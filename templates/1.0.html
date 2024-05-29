@@ -1,10 +1,14 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/unitIntro.css">
     <title>Unit 1</title>
+    <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -25,15 +29,22 @@
     </script>
     {% endif %}
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- container to center the main content -->
     <div class="center">
         <p id="helloText">Hello,</p>
         <p class="unitText">Welcome to Unit 1, </p>
         <p class="unitText" id="description">Introduction to Types of Blindness</p>
     </div>
+    <!-- if the user is a teacher -->
     {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
         <!-- <button id="back">Back</button> -->

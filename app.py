@@ -65,6 +65,10 @@ def unit1Page(v):
 def getUnit():
     return Response(str(currentUnit), mimetype="text/plain")
 
+@app.route("/sources")
+def sourcesPage():
+    return render_template("sources.html", value=getValue())
+
 # any invalid route
 @app.errorhandler(404)
 def nullPage(error):

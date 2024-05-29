@@ -1,10 +1,14 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
     <title>1.1 What Does It Mean To Be Blind?</title>
+    <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -25,47 +29,63 @@
     </script>
     {% endif %}
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- container to center the main content -->
     <div id="content">
+        <!-- make a content box -->
         <div class="contentcontainer">
+            <!-- standard page starter, introducing the lesson -->
             <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 1.1, </p>
             <p class="unitText description">What Does It Mean To Be Blind?</p>
         </div>
+        <!-- another box for more elaboration -->
         <div class="contentcontainer">
+            <!-- make a paragraph, styled -->
             <p class="contenttext">
+                <!-- tooltips for more depth, and to allow for easy look up -->
                 <strong class="tooltip">Blindness<span class="tooltiptext">A condition that means you are unable to see well</span></strong> is a condition that means that you cannot see well.
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 This can affect one or both eyes. Another name for blindness is 
                 visual impairment. 
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
+                <!-- floating image, buffering the text from the right edge to integrate it into the content -->
                 <img src="static/lesson1.1.png" alt="Visual Impairment: Expectation versus Reality" style="width: 250px; margin: 10px; float: right;">
                 Did you know that when someone is “blind”, it 
                 doesn't mean that they see only pitch black? 
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 Most people who are blind can see some light, or flashes of light, meaning that 
                 if they walk into a room, they can tell if the lights are on or off. 
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 Still though, some people do see pitch black, but this is very rare. 
                 Being completely unable to see light is called “<strong class="tooltip">total blindness<span class="tooltiptext">When someone is completely unable to see light</span></strong>.”,
                 also known as complete blindness.
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 Those who are completely blind are unable to see the difference between a bright room and a dark one.
             </p>
         </div>
         <div class="contentcontainer">
+            <!-- new header for activity -->
             <p class="unitText">Hands-On Activity</p>
             <p class="unitText description">Try It Yourself!</p>
         </div>
@@ -74,16 +94,21 @@
                 This is a short, interactive lesson and experiment to help you
                 understand the effects of visual impairment on an person's life.
             </p>
+            <!-- a red textbox under the rest of the content in the box to give additional information -->
             <p class="sidenotetext">
                 Make sure to read the entire step-by-step directions before blindfolding yourself!
             </p>
         </div>
         <div class="contentcontainer">
+            <!-- circle with a number inside it -->
             <p class="steptext">1</p>
+            <!-- emphasized and larger to name the step -->
             <p class="titletext">Partner Up!</p>
+            <!-- explain the step -->
             <p class="contenttext">
                 First, find a partner!
             </p>
+            <!-- img outside the paragraphs to get center align, personally styled for width and margin -->
             <img src="static/1.1step1.png" alt="Partner Up!" style="margin-top: 20px; height: 600px;">
         </div>
         <div class="contentcontainer">
@@ -127,10 +152,12 @@
                 Finally, discuss with your partner about the differences of living in and interacting with the
                 world around you with and without a sense of sight to guide you.
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 1. Did you notice how difficult it was to get around, missing such an important sense?
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 2. How were you able to make use of your other senses to make up for your loss of sight?
@@ -139,7 +166,10 @@
             <img src="static/1.1step5.png" alt="Discussion" style="margin-top: 20px; height: 600px;">
         </div>
     </div>
+    <!-- if the user is a teacher -->
     {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
         <button id="back">Back</button>

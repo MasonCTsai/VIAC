@@ -1,10 +1,14 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
     <title>2.2 Service Animals and Canes</title>
+    <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -25,16 +29,24 @@
     </script>
     {% endif %}
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- container to center the main content -->
     <div id="content">
+        <!-- make a content box -->
         <div class="contentcontainer">
+            <!-- standard page starter, introducing the lesson -->
             <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 2.2, </p>
             <p class="unitText description">Service Animals and Canes</p>
         </div>
+        <!-- another box for more elaboration -->
         <div class="contentcontainer">
+            <!-- make a paragraph, styled -->
             <p class="contenttext">
                 Blind people are able to get around by using a dog. 
                 The name for this dog is a 
@@ -42,6 +54,7 @@
                 They have a very important job. They help people know where 
                 bumps and holes may be. They can also help them cross the road.
             </p>
+            <!-- img outside the paragraphs to get center align, personally styled for width and margin -->
             <img src="static/2.2seeingeyedog.png" alt="A Seeing Eye Dog" style="margin-top: 20px; width: 500px;">
         </div>
         <div class="contentcontainer">
@@ -49,7 +62,10 @@
                 This usually means that the service dog is looking for your help 
                 because something happened to their owner.
             </p>
+            <!-- creates a blurred space above the ^text^, disappearing when the user
+                hovers over it, allowing for reveals of answers -->
             <div class="spoileroverlay">
+                <!-- text that goes on top of the blur -->
                 <p class="contenttext" style="text-align: center;">
                     What do you think it means when a service dog approaches you without its owner? (Hover to reveal the answer!)
                 </p>
@@ -67,6 +83,7 @@
                 vibrations that the person can feel. This lets them know if there is a road or anything 
                 else nearby.
             </p>
+            <!-- split paragraphs with line breaks -->
             <br>
             <p class="contenttext">
                 Blind people use their hearing a lot too. 
@@ -76,6 +93,7 @@
             </p>
         </div>
         <div class="contentcontainer">
+            <!-- new header for activity -->
             <p class="unitText">Hands-On Activity</p>
             <p class="unitText description">Try It Yourself!</p>
         </div>
@@ -94,6 +112,7 @@
             <p class="contenttext">
                 2. A cane or long stick
             </p>
+            <!-- a red textbox under the rest of the content in the box to give additional information -->
             <p class="sidenotetext">
                 Make sure to read the entire step-by-step directions before blindfolding yourself!
             </p>
@@ -134,11 +153,14 @@
             <img src="static/2.2reflection.png" alt="Kid Thinking" style="margin-top: 20px; width: 600px;">
         </div>
     </div>
+    <!-- if the user is a teacher -->
     {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
         <button id="back">Back</button>
-        <!-- <button id="next">Next</button> -->
+        <button id="next">Next</button>
     </div>
     <script>
         // when each button is clicked, go to the designated page, only visible to the teacher
@@ -152,7 +174,7 @@
         })
         document.getElementById("next").addEventListener("click", (e) => {
             e.preventDefault();
-            window.location.href = "0.0";
+            window.location.href = "3.0";
         })
     </script>
     {% endif %}

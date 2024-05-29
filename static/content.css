@@ -164,6 +164,7 @@ html {
     width: 100%;
     text-shadow: 2px 3px#99E1D9;
     transform: translate(0, -7px);
+    line-height: 45px;
 }
 
 /* 1 per contentcontainer, creates a circle with text inside (usually numbers) */
@@ -195,6 +196,7 @@ html {
     text-align: left;
     margin: 0;
     margin-top: 20px;
+    font-size: 20px;
 }
 .sidenotetext::before {
     content: "Side note:";

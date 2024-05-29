@@ -1,10 +1,14 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
     <title>2.1 How Do Blind People Get Around?</title>
+    <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -25,16 +29,24 @@
     </script>
     {% endif %}
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- container to center the main content -->
     <div id="content">
+        <!-- make a content box -->
         <div class="contentcontainer">
+            <!-- standard page starter, introducing the lesson -->
             <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 2.1, </p>
             <p class="unitText description">How Do Blind People Get Around?</p>
         </div>
+        <!-- another box for more elaboration -->
         <div class="contentcontainer">
+            <!-- make a paragraph, styled -->
             <p class="contenttext">
                 Blind people can have a harder time getting around, compared to those with sight. 
                 While they are usually able to do things on their own, sometimes
@@ -49,7 +61,9 @@
                 items and people in front of it, which is then used to notify the user of what
                 they might be looking at. Links to download Seeing AI are below.
             </p>
+            <!-- link play store link for the app -->
             <a href="https://play.google.com/store/apps/details?id=com.microsoft.seeingai&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer"><img src="static/googleplay.png" alt="Download Seeing AI on the Google Play Store" style="border: none; box-shadow: none; height: 50px;"></a>
+            <!-- link app store link for the app -->
             <a href="https://apps.apple.com/us/app/seeing-ai/id999062298" target="_blank" rel="noopener noreferrer"><img src="static/appstore.png" alt="Download Seeing AI on the App Store" style="border: none; box-shadow: none; height: 50px;"></a>
         </div>
         <div class="contentcontainer">
@@ -71,16 +85,21 @@
             <p class="contenttext">
                 2. Something to act as a blindfold, such as a blindfold or cloth
             </p>
+            <!-- a red textbox under the rest of the content in the box to give additional information -->
             <p class="sidenotetext">
                 Make sure to read the entire step-by-step directions before blindfolding yourself!
             </p>
         </div>
         <div class="contentcontainer">
+            <!-- circle with a number inside it -->
             <p class="steptext">1</p>
+            <!-- emphasized and larger to name the step -->
             <p class="titletext">Get Ready!</p>
+            <!-- explain the step -->
             <p class="contenttext">
                 Layout the piece of clothing on a table in front of you
             </p>
+            <!-- img outside the paragraphs to get center align, personally styled for width and margin -->
             <img src="static/2.1step1.png" alt="Accessories!" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
@@ -119,7 +138,10 @@
             <img src="static/2.1reflection.png" alt="Kid Thinking" style="margin-top: 20px; width: 600px;">
         </div>
     </div>
+    <!-- if the user is a teacher -->
     {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
         <button id="back">Back</button>

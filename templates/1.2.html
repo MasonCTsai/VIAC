@@ -1,10 +1,14 @@
+<!-- Designates the pages as HTML5 -->
 <!DOCTYPE html>
+<!-- sets the default language to english -->
 <html lang="en">
+<!-- header, sets tab name, character set, and width -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/content.css">
     <title>1.2 Not All Blindness is Equal</title>
+    <!-- if the user is a student, run the script -->
     {% if session['role'] == 'student' %}
     <script>
         // every second, the page makes a request to the server for the current unit
@@ -25,30 +29,41 @@
     </script>
     {% endif %}
 </head>
+<!-- body of the page, where everything is -->
 <body>
+    <!-- creates a gradient background with CSS -->
     <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
     <div id="starbackground"></div>
+    <!-- container to center the main content -->
     <div id="content">
+        <!-- make a content box -->
         <div class="contentcontainer">
+            <!-- standard page starter, introducing the lesson -->
             <p class="helloText">Hello,</p>
             <p class="unitText">Welcome to Lesson 1.2, </p>
             <p class="unitText description">Not All Blindness is Equal</p>
         </div>
+        <!-- another box for more elaboration -->
         <div class="contentcontainer">
+            <!-- make a paragraph, styled -->
             <p class="contenttext">
                 There are many different types of blindness.  
                 Those with visual impairment can develop it later in life, 
                 while others were born with it.  Blindness that people are 
+                <!-- tooltips for more depth, and to allow for easy look up for definition and/or pronunciation -->
                 born with are called  <strong class="tooltip">congenital<span class="tooltiptext">
-                    (kuhn·JEH·nuh·tl) A type of visual impairment that is possessed from birth</span></strong>. 
+                    (kuhn-JEH-nuh-tl) A type of visual impairment that is possessed from birth</span></strong>. 
                 There can be many different causes of blindness, and we'll talk more about them below.
             </p>
+            <!-- a red textbox under the rest of the content in the box to give additional information -->
             <p class="sidenotetext" style="::before {content: '! Warning ! ';}">
                 Some of the images in this lesson may be triggering or graphic. If this is an issue, please 
                 refrain from continuing with this particular lesson.
             </p>
         </div>
         <div class="contentcontainer">
+            <!-- circle with a number inside it -->
             <p class="steptext">1</p>
             <p class="contenttext">
                 Blindness can be caused by the loss of one or both of a person's eyes. 
@@ -56,6 +71,7 @@
                     is born with one or both of its eyes missing.</span></strong>.  Try pronouncing anophthalmia! 
                 (Hint: hover over the highlighted word for its pronunciation!)
             </p>
+            <!-- img outside the paragraphs to get center align, personally styled for width and margin -->
             <img src="static/1.2anophthalmia.png" alt="Image of Anophthalmia" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
@@ -64,7 +80,8 @@
                 Others may be born with both of their eyes, 
                 but things can go wrong with their growth, 
                 leading to the baby being born with eyes that are too small.  
-                This can happen to one or both eyes.
+                This can happen to one or both eyes, leading to complete blindness 
+                for the eyes it affects.
             </p>
             <img src="static/1.2microphthalmia.png" alt="Image of Microphthalmia" style="margin-top: 20px; width: 600px;">
         </div>
@@ -72,7 +89,7 @@
             <p class="steptext">3</p>
             <p class="contenttext">
                 Besides smaller eyes, poor eyesight can be 
-                caused by deformities in the eye, especially 
+                caused by imperfections in the eye, especially 
                 the <strong class="tooltip">iris<span class="tooltiptext">The colored ring around the black dot on your eyes</span></strong>.
                 This can cause complete blindness in worse cases.
             </p>
@@ -87,7 +104,7 @@
                 These can become worse and worse, where early stages do not cause total blindness.  Over time, 
                 though, they can damage the eye enough to cause complete blindness.
             </p>
-            <img src="static/1.2cataracts.png" alt="Image of Cataracts" style="margin-top: 20px; width: 600px;">
+            <img src="static/1.2cataracts2.png" alt="Image of Cataracts" style="margin-top: 20px; width: 900px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">5</p>
@@ -100,9 +117,9 @@
                 The macula is the part at the back of your eye that actually receives and processes light, 
                 allowing you to see. As you grow older, the macula can be damaged, leading to a loss of vision, 
                 though usually not completely. Though AMD cannot be seen from the outside, images like the one below
-                will sometimes show a small spots on the eye.
+                will sometimes show a small spots on the eye. Try to see the difference in the images below!
             </p>
-            <img src="static/1.2macular.png" alt="Image of a Degenerated Macula" style="margin-top: 20px; width: 600px;">
+            <img src="static/1.2amd.png" alt="Image of a Degenerated Macula" style="margin-top: 20px; width: 900px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">6</p>
@@ -115,7 +132,7 @@
                 is when you have naturally low amounts of sugar in your blood, meaning your cells aren't able 
                 to get the energy they need. This causes damage to the eye, eventually leading to blindness.
             </p>
-            <img src="static/1.2diabeticretinopathy.png" alt="Image of Diabetic Retinopathy" style="margin-top: 20px; width: 600px;">
+            <img src="static/1.2diabeticretinopathy2.png" alt="Image of Diabetic Retinopathy" style="margin-top: 20px; width: 900px;">
         </div>
         <div class="contentcontainer">
             <p class="steptext">7</p>
@@ -130,6 +147,7 @@
             <img src="static/1.2glaucoma.png" alt="Image of Glaucoma" style="margin-top: 20px; width: 600px;">
         </div>
         <div class="contentcontainer">
+            <!-- new header for activity -->
             <p class="unitText">Brain-Power Activity</p>
             <p class="unitText description">Let's Think!</p>
         </div>
@@ -141,7 +159,10 @@
             <img src="static/1.2discussion.png" alt="Discussion" style="margin-top: 20px; width: 600px;">
         </div>
     </div>
+    <!-- if the user is a teacher -->
     {% if session['role'] == 'teacher' %}
+    <!-- navigation buttons, only visible to the teacher, allows 
+        for going back and forth between lessons, and to return to the table of contents -->
     <div id="navbuttons">
         <button id="tableofcontents">≡</button>
         <button id="back">Back</button>

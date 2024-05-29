@@ -1,0 +1,92 @@
+<!-- Designates the pages as HTML5 -->
+<!DOCTYPE html>
+<!-- sets the default language to english -->
+<html lang="en">
+<!-- header, sets tab name, character set, and width -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="static/toc.css">
+    <title>Sources Cited</title>
+</head>
+<!-- body of the page, where everything is -->
+<body>
+    <!-- creates a gradient background with CSS -->
+    <div id="gradientbackground"></div>
+    <!-- creates a scrolling star background with CSS -->
+    <div id="starbackground"></div>
+    <!-- main content box to center everything -->
+    <div id="mainbox" style="width: 800px;">
+        <!-- text that designates the page -->
+        <p id="welcome">Sources Cited</p>
+        <!-- list of units, separated by units into cards, with the link to the unit page, and text naming the subunits -->
+        <div class="unitbox">
+            <a href="https://medlineplus.gov/ency/article/003040.htm" target="_blank" rel="noopener noreferrer" class="unittext">
+                Blindness and vision loss
+            </a>
+            <p class="subunittext">by MedlinePlus</p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/28846303/" target="_blank" rel="noopener noreferrer" class="unittext">
+                Blindness
+            </a>
+            <p class="subunittext">by So Yeon Lee, Bharat Gurnani, Fassil B. Mesfin</p>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment" target="_blank" rel="noopener noreferrer" class="unittext">
+                Blindness and vision impairment
+            </a>
+            <p class="subunittext">by the World Health Organization</p>
+            <a href="https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/coloboma" target="_blank" rel="noopener noreferrer" class="unittext">
+                Coloboma
+            </a>
+            <p class="subunittext">by the National Eye Institute</p>
+            <a href="https://www.researchgate.net/publication/263678923_Disability_stigmatization_as_a_barrier_to_employment_equity_for_legally-blind_Canadians" target="_blank" rel="noopener noreferrer" class="unittext">
+                Disability stigmatization as a barrier to employment equity for legally-blind Canadians
+            </a>
+            <p class="subunittext">by Cecilia Benoit, Mikael Jansson, Martha Jansenberger, Rachel Phillips</p>
+            <a href="https://ps.psychiatryonline.org/doi/epdf/10.1176/appi.ps.201100529" target="_blank" rel="noopener noreferrer" class="unittext">
+                Challenging the Public Stigma of Mental Illness: A Meta-Analysis of Outcome Studies
+            </a>
+            <p class="subunittext">by Patrick W. Corrigan, Scott B. Morris, Patrick J. Michaels, Jennifer D. Rafacz, Nicolas Rüsch</p>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/24156397/" target="_blank" rel="noopener noreferrer" class="unittext">
+                Reducing the stigma of mental illness in undergraduate medical education: a randomized controlled trial
+            </a>
+            <p class="subunittext">by Andriyka Papish, Aliya Kassam, Geeta Modgill, Gina Vaz, Lauren Zanussi, Scott Patten</p>
+            <a href="https://trepo.tuni.fi/bitstream/handle/10024/67015/951-44-4842-1.pdf?sequence=1&isAllowed=y" target="_blank" rel="noopener noreferrer" class="unittext">
+                Psychosocial Development and Social Support among Adolescents with Visual Impairment
+            </a>
+            <p class="subunittext">by Taina Huurre, Hillevi Aro</p>
+            <a href="https://researchbank.swinburne.edu.au/file/3986e9c7-29f3-45b8-9a95-0f3440805eea/1/Sara_Partow_Thesis.pdf" target="_blank" rel="noopener noreferrer" class="unittext">
+                Coping With Stigmatisation and Discrimination Related to Blindness or Low Vision
+            </a>
+            <p class="subunittext">by Sara Partow</p>
+            <a href="https://versanthealth.com/vision-simulator/" target="_blank" rel="noopener noreferrer" class="unittext">
+                Vision Simulator
+            </a>
+            <p class="subunittext">by Versant Health</p>
+            <a href="https://hpi.georgetown.edu/visual/" target="_blank" rel="noopener noreferrer" class="unittext">
+                Visual Impairment
+            </a>
+            <p class="subunittext">by Georgetown University's Health Policy Institute</p>
+            <a href="https://apps.apple.com/us/app/seeing-ai/id999062298" target="_blank" rel="noopener noreferrer" class="unittext">
+                Seeing AI on the App Store
+            </a>
+            <p class="subunittext">by Microsoft</p>
+            <a href="https://play.google.com/store/apps/details?id=com.microsoft.seeingai&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer" class="unittext">
+                Seeing AI on the Play Store
+            </a>
+            <p class="subunittext">by Microsoft</p>
+            <a href="https://www.ada.gov/resources/service-animals-faqs/" target="_blank" rel="noopener noreferrer" class="unittext">
+                Frequently Asked Questions about Service Animals and the ADA
+            </a>
+            <p class="subunittext">by the American Disability Association</p>
+        </div>
+    </div>
+    <button id="homebutton">
+        Home
+    </button>
+    <script>
+        document.getElementById("homebutton").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "/";
+        });
+    </script>
+</body>
+</html>

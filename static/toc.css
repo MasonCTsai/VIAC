@@ -4,6 +4,8 @@ body {
     background: #5D576B;
     margin: 0;
     padding: 0;
+    overflow-y:scroll;
+    min-height: 100%;
 }
 
 /* makes a div as a gradient background between grey and gray (it's noticeable I swear) */
@@ -52,24 +54,20 @@ body {
 
 /* Just a container to center everything */
 #mainbox {
-    display: flex;
-    margin: 0;
+    width: 700px;
+    max-width: 75vw;
     position: absolute;
-    top: 50%;
     left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    transform: translate(-50%,0);
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 600px;
-    height: 600px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 /* welcome text */
 #welcome {
     width: 100%;
-    text-align: center;
     font-weight: 800;
     font-size: 30px;
     color: #99E1D9;
@@ -86,9 +84,10 @@ body {
     outline-offset: 5px;
     padding: 20px;
     font-weight: 800;
-    width: 100%;
+    width: calc(100% - 40px);
     text-align: left;
-    margin: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 /* Styling for unit headers, gets mostly overwritten by anchor styling */
@@ -103,6 +102,28 @@ body {
     margin-bottom: 5px;
     padding-left: 20px;
     font-size: 14px;
+}
+
+#homebutton {
+    position: fixed;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    background-color: #99E1D9;
+    outline: 2px solid #fffae35e;
+    outline-offset: 2px;
+    left: 20px;
+    bottom: 20px;
+    height: 100px;
+    width: 125px;
+    font-weight: 800;
+    font-size: 24px;
+}
+#homebutton:hover {
+    background-color: #F7567C;
+    cursor: pointer;
+}
+#homebutton:active {
+    background-color: #FFFAE3;
 }
 
 /* Style anchors to be very noticeable and clickable */
@@ -124,4 +145,9 @@ a {
 }
 a::after {
     content: " ▶";
+}
+
+/* removes scrollbar */
+::-webkit-scrollbar {
+    display: none;
 }
